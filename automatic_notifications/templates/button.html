@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de Botón con Función JavaScript</title>
+</head>
+<body>
+    <button id="sendEmail">Enviar Correo</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#sendEmail").click(function() {
+                $.ajax({
+                    url: "/automatic_notifications/send_email/",  // Ruta de la vista en Django que enviará el correo
+                    type: "POST",
+                    data: {},
+                    success: function(response) {
+                        alert("Correo enviado exitosamente.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
