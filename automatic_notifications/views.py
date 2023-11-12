@@ -14,8 +14,30 @@ def send_email(request):
             from_email = "eledenhelper@gmail.com"
             password = "kcgu zmff bmxi xlxe"
 
-            subject = "prueba"
-            message = "esta es una prueba de correo automatico"
+            subject = "Confirmación de Pago Exitoso"
+
+            message = """
+Asunto: Confirmación de Pago Exitoso
+
+Estimado/a [Nombre del Cliente],
+
+Nos complace informarte que hemos recibido con éxito tu pago para patrocinar un animal. Agradecemos tu confianza en El Eden.
+
+
+
+Si tienes alguna pregunta o inquietud relacionada con tu pago, no dudes en ponerte en contacto con nuestro equipo de soporte a través de eledenhelper@gmail.com.
+
+Agradecemos tu negocio y esperamos seguir sirviéndote en el futuro.
+
+Saludos cordiales,
+
+El-eden
+eledenhelper@gmail.com
+eledenapi.com
+"""
+
+
+            
             to_email = data['email']
 
             mail_structure = MIMEMultipart('alternative')

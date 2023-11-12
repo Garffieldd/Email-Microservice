@@ -82,9 +82,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'email_microservice_db',
-        'USER': 'root',
-        'PASSWORD': '1943003',
-        'PORT': '3306',
+        'USER': 'postgres',
+        'PASSWORD': 'univalle123',
+        'PORT': '3307',
         'HOST': 'localhost'
     }
 }
