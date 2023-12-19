@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -7,6 +8,7 @@ from .models import mail_info
 import json
 
 # Create your views here.
+@csrf_exempt
 def send_email(request):
     data = json.loads(request.body)
     if request.method == 'POST':
@@ -16,25 +18,7 @@ def send_email(request):
 
             subject = "Confirmación de Pago Exitoso"
 
-            message = """
-Asunto: Confirmación de Pago Exitoso
-
-Estimado/a [Nombre del Cliente],
-
-Nos complace informarte que hemos recibido con éxito tu pago para patrocinar un animal. Agradecemos tu confianza en El Eden.
-
-
-
-Si tienes alguna pregunta o inquietud relacionada con tu pago, no dudes en ponerte en contacto con nuestro equipo de soporte a través de eledenhelper@gmail.com.
-
-Agradecemos tu negocio y esperamos seguir sirviéndote en el futuro.
-
-Saludos cordiales,
-
-El-eden
-eledenhelper@gmail.com
-eledenapi.com
-"""
+            message = "El Eden te agradece, pago confirmado."
 
 
             

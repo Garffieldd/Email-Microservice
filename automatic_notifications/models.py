@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class mail_info(models.Model):
-    user_id = models.CharField(null=False,unique=True,max_length=40,verbose_name='user_id')
+    user_id = models.CharField(null=False,max_length=40,verbose_name='user_id')
     subject = models.CharField(null=False,max_length=40,verbose_name='subject')
     message = models.CharField(null=False,max_length=40,verbose_name='message')
 
